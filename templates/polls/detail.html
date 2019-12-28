@@ -1,0 +1,10 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+{% if question %}
+           <ul>
+           <li>{{ question }}</li>
+           <li><a href="{% url 'results' question.pub_date %}">{{ question.pub_date }}</a></li>
+       </ul>
+{% else %}
+           <p>No details are available.</p>
+{% endif %}
